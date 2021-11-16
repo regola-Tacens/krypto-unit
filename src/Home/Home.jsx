@@ -172,7 +172,8 @@ function Home() {
     sortByMcmRank((prevState) => !prevState);
   };
   const handleSelectRow = (e) => {
-    console.log(e.target.value)
+    window.scrollTo({ top: 0, behavior :'smooth'});
+    setpage(0)
     setrows(Number(e.target.value))
   }
   const handleNextPage = () => {
