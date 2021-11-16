@@ -15,7 +15,8 @@ const CurrenciesList = ({
   sortOnMaxSupply,
   sortOnMktCap,
   sortOnCmcRank,
-  page
+  page,
+  rows
 }) => {
   const currencies = sortedCurrencies;
   return (
@@ -137,6 +138,7 @@ const CurrenciesList = ({
             isNovice={isNovice}
             isExpert={isExpert}
             page={page}
+            rows={rows}
           />
         </tbody>
       </table>

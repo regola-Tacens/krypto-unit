@@ -2,12 +2,12 @@ import toComaNbr from "../utils/currencyFormatter";
 import star from "../assets/img/star.png";
 import PropTypes from "prop-types";
 
-const CurrencyItem = ({ currencies, isNovice, isExpert, page }) => {
+const CurrencyItem = ({ currencies, isNovice, isExpert, page, rows }) => {
   return (
     <>
       {currencies.map((currency, index) => {
         
-        while (index >= (page*100) && index <= ((page +1) *100)) return(
+        while (index >= (page * rows) && index <= ((page +1) * rows)) return(
         <tr className="currenciesTable__tr" key={currency.id}>
           <td className="currenciesTable__img">
             <img className="currenciesTable__star" src={star} alt="star" />
