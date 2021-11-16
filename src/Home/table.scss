@@ -1,0 +1,68 @@
+@use 'src/styles/vars';
+
+.currenciesTableContainer{
+  overflow-x: scroll;
+  white-space: nowrap;
+
+}
+
+.currenciesTable {
+  &__symbol {
+    margin-left:0.5rem;
+    color: vars.$darkGrey;
+    font-weight: 300;
+  }
+  &__name{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: black;
+  }
+  // overflow-x: scroll;
+  // white-space: nowrap;
+}
+
+.col {
+  min-Width: auto;
+  max-width: auto; 
+}
+
+.col50 {
+  width: 50px;
+}
+.col250 {
+  width: 250px;
+}
+.col200 {
+  width: 200px;
+}
+.col85 {
+  width: 120px;
+}
+
+tr{
+  border-bottom: 0.5px solid vars.$lightGrey;
+}
+
+td, th{
+  padding: 1.5rem 0rem;
+}
+
+.theader {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.negative, .positive {
+  font-weight: 500;
+}
+.negative {
+  color: #E23131;
+}
+
+.positive {
+  color: #05B94D;
+}
