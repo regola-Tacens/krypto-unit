@@ -27,6 +27,8 @@
   }
   &__index {
     text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   &__tr:hover {
     background-color: vars.$veryLightGrey;
@@ -80,6 +82,9 @@ th {
   }
   &__text:hover {
     color: vars.$lightBlue;
+  }
+  &__index{
+    padding: 0rem 0.5rem;
   }
   // &__text:hover:after {
   //   content:'';

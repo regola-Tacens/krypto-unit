@@ -21,6 +21,7 @@ function Home() {
   const [isSortedByMaxSupply, sortByMaxSupply] = useState(false);
   const [isSortedByMktCap, sortByMktCap] = useState(false);
   const [isSortedByMcmRank, sortByMcmRank] = useState(false);
+  const [page, setpage] = useState(0);
 
   const handleNoviceEvent = () => {
     setIsExperienced(false);
@@ -169,6 +170,16 @@ function Home() {
         );
     sortByMcmRank((prevState) => !prevState);
   };
+  const handleNextPage = () => {
+    console.log(sortedCurrencies.length/30)
+    console.log(page)
+    page *100 +100 < sortedCurrencies.length &&
+    setpage(page + 1)
+  }
+  const handlePreviousPage = () => {
+    page >=1 &&
+    setpage(page - 1)
+  }
 
   return (
     <div className="home">
@@ -195,7 +206,10 @@ function Home() {
         sortOnMaxSupply={handleMaxSupply}
         sortOnMktCap={handleMktCap}
         sortOnCmcRank={sortOnCmcRank}
+        page={page}
       />
+      <button onClick={handleNextPage}>+</button>
+      <button onClick={handlePreviousPage}>-</button>
     </div>
   );
 }

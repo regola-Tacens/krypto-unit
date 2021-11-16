@@ -14,7 +14,8 @@ const CurrenciesList = ({
   sortOnCirculatingSupply,
   sortOnMaxSupply,
   sortOnMktCap,
-  sortOnCmcRank
+  sortOnCmcRank,
+  page
 }) => {
   const currencies = sortedCurrencies;
   return (
@@ -40,7 +41,11 @@ const CurrenciesList = ({
               <div className="theader alignCenter"></div>
             </th>
             <th>
-              <div className="theader alignCenter">#</div>
+              <div className="theader alignCenter">
+                <p className="theader__index" onClick={sortOnCoin}>
+                  #
+                </p>
+              </div>
             </th>
             <th>
               <div className="theader alignLeft">
@@ -131,6 +136,7 @@ const CurrenciesList = ({
             currencies={currencies}
             isNovice={isNovice}
             isExpert={isExpert}
+            page={page}
           />
         </tbody>
       </table>
