@@ -20,10 +20,23 @@ const NavBar = () => {
           </nav>
         </div>
         <div className="header__userSpecs">
-          <div>EN</div>
-          <div>USD</div>
+          <div className="select is-normal header__userSpecs__language">
+            <select name="userLanguage">
+              <option >EN</option>
+              <option >FR</option>
+              <option >ES</option>
+            </select>
+          </div>
+          <div className="select is-normal header__userSpecs__currency">
+            <select name="selectedCurrency">
+              <option >USD</option>
+              <option >EUR</option>
+              <option >CNY</option>
+              <option >DKK</option>
+            </select>
+          </div>
           <div>MOON</div>
-          <div>Subscribe</div>
+          <div className="header__userSpecs__subscribe">Subscribe</div>
         </div>
     </header>
   )

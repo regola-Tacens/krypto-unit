@@ -34,5 +34,23 @@
   }
   &__userSpecs{
     display: flex;
+    align-items: center;
+    &__language{
+      margin-right:0.5rem;
+    }
+    &__subscribe{
+      background: vars.$blueGradient;
+      padding:0.5rem 1rem;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    &__subscribe:hover{
+      background: none;
+      background-color: vars.$blue;
+    }
   }
+}
+.header__userSpecs .dropdown {
+  margin:0 0.5rem;
 }

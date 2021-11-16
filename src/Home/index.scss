@@ -15,6 +15,11 @@
       padding:0.3rem 1.5rem;
       background: vars.$blueGradient;
     }
+    &__showRows{
+      font-family: 'Rubik', sans-serif;
+      color: vars.$lightGrey;
+      margin-right:1rem;
+    }
   }
 }
 
@@ -24,7 +29,9 @@
     margin-bottom: 0.5rem;
   }
   &__baseline {
-    font-weight: 700;
+    font-weight: 400;
+    font-size:1rem;
+    font-family: 'Rubik', sans-serif;
     margin-bottom: 0.5rem;
   }
 }
@@ -48,16 +55,23 @@
     padding: 0.5rem;
     margin-right:1rem;
     border-radius: 5px;
+    box-shadow: 2px 4px 4px -3px rgba(0,0,0,0.3);
+    transform: translateY(0px);
+    transition: 0.3s transform ease-in-out;
     &--active {
       background-color: white;
       color: #004c9e;
       font-weight: 400;
+      box-shadow: 4px 5px 5px -2px rgba(0,0,0,0.3);
     }
   }
   &__levelBtn:hover {
-    background-color: white;
-    color: #004c9e;
+    // background-color: white;
+    // color: #004c9e;
     cursor: pointer;
+    box-shadow: 2px 4px 4px -3px rgba(0,0,0,0.3);
+    transform: translateY(-4px);
+    transition: 0.3s transform ease-in-out;
   }
   &__userIcon {
     width:2.5rem;

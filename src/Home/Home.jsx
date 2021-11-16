@@ -22,7 +22,7 @@ function Home() {
   const [isSortedByMktCap, sortByMktCap] = useState(false);
   const [isSortedByMcmRank, sortByMcmRank] = useState(false);
   const [page, setpage] = useState(0);
-  const [rows, setrows] = useState(30);
+  const [rows, setrows] = useState(239);
 
   const handleNoviceEvent = () => {
     setIsExperienced(false);
@@ -177,8 +177,6 @@ function Home() {
     setrows(Number(e.target.value))
   }
   const handleNextPage = () => {
-    console.log('page',page)
-    console.log('rows',rows)
     window.scrollTo({ top: 0, behavior :'smooth'});
     (page * rows) + rows < sortedCurrencies.length &&
     setpage(page + 1)
@@ -218,12 +216,14 @@ function Home() {
         rows={rows}
       />
       <div className="home__btnContainer">
-      <label htmlFor="currencyQuantity">Show rows</label>
-        <select name="currencyQuantity" onChange={handleSelectRow}>
-          <option value="30">30</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
+      <label className="home__btnContainer__showRows" htmlFor="currencyQuantity">Show rows</label>
+        <div className="select">
+          <select name="currencyQuantity" onChange={handleSelectRow}>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
         <button className="home__btnContainer__pageButton" onClick={handlePreviousPage}>-</button>
         <button className="home__btnContainer__pageButton" onClick={handleNextPage}>+</button>
       </div>

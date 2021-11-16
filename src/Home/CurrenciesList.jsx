@@ -16,7 +16,7 @@ const CurrenciesList = ({
   sortOnMktCap,
   sortOnCmcRank,
   page,
-  rows
+  rows,
 }) => {
   const currencies = sortedCurrencies;
   return (
