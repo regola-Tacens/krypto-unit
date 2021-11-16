@@ -1,0 +1,38 @@
+@use 'src/styles/vars';
+
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  &__navbar{
+    display: flex;
+    align-items: center;
+    &__logo{
+      margin-right:4rem;
+      display: flex;
+      align-items: center;
+      &__img{
+        margin-bottom:0.6rem;
+        width:50px;
+        margin-right:0.5rem;
+      }
+      &__text{
+        font-family: 'Rubik', sans-serif;
+        font-weight: 900;
+        font-size:1.2rem;
+      }
+      &__text > span{
+        color: vars.$orange;
+        font-weight: 400;
+      }
+    }
+    &__buttons{
+      display: flex;
+    }
+  }
+  &__userSpecs{
+    display: flex;
+  }
+}

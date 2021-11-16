@@ -1,0 +1,48 @@
+.home {
+  padding: 1.5rem;
+  
+}
+
+.title {
+  &__hero {
+    margin-bottom: 0.5rem;
+  }
+  &__baseline {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.level {
+  position: relative;
+  background: linear-gradient(90deg, #2EC3CC 20.71%, #036AD3 97%);
+  display: inline-flex;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 5px;
+  margin: 2rem 0rem;
+  &__userIcon {
+    margin-right:1rem;
+  }
+  &__levelBtn {
+    border:1px solid white;
+    color: white;
+    padding: 0.5rem;
+    margin-right:1rem;
+    border-radius: 5px;
+  }
+  &__levelBtn:hover {
+    background-color: white;
+    color: #0469D4;
+    cursor: pointer;
+  }
+  &__userIcon {
+    width:2.5rem;
+  }
+  &__expertise{
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    left: 5.5rem;
+  } 
+}
