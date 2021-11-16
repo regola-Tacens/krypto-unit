@@ -3,10 +3,12 @@
 .currenciesTableContainer{
   overflow-x: scroll;
   white-space: nowrap;
-
+  
 }
 
 .currenciesTable {
+  width:100%;
+  margin: 0 auto;
   &__symbol {
     margin-left:0.5rem;
     color: vars.$darkGrey;
@@ -16,6 +18,13 @@
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     color: black;
+  }
+  &__star{
+    width: 20px;
+    margin-left: 0.5rem;
+  }
+  &__index{
+    text-align: center;
   }
   // overflow-x: scroll;
   // white-space: nowrap;
@@ -55,6 +64,9 @@ td, th{
 .alignLeft {
   text-align: left;
 }
+.alignCenter {
+  text-align: center;
+}
 
 .negative, .positive {
   font-weight: 500;
@@ -65,4 +77,8 @@ td, th{
 
 .positive {
   color: #05B94D;
+}
+
+.displayNone {
+  display: none;
 }
