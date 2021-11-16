@@ -1,38 +1,51 @@
-@use 'src/styles/vars';
+@use "src/styles/vars";
 
-.currenciesTableContainer{
+.currenciesTableContainer {
   overflow-x: scroll;
   white-space: nowrap;
-  
 }
 
 .currenciesTable {
-  width:100%;
+  width: 100%;
   margin: 0 auto;
   &__symbol {
-    margin-left:0.5rem;
+    margin-left: 0.5rem;
     color: vars.$darkGrey;
     font-weight: 300;
   }
-  &__name{
-    font-family: 'Rubik', sans-serif;
+  &__name {
+    font-family: "Rubik", sans-serif;
     font-weight: 500;
     color: black;
   }
-  &__star{
+  &__img {
+    text-align: center;
+  }
+  &__star {
     width: 20px;
     margin-left: 0.5rem;
   }
-  &__index{
+  &__index {
     text-align: center;
+  }
+  &__tr:hover {
+    background-color: vars.$veryLightGrey;
+  }
+  &__percent,
+  &__price,
+  &__volume24,
+  &__circulatingSupply,
+  &__MktCap,
+  &__maxSupply {
+    padding-right: 1rem;
   }
   // overflow-x: scroll;
   // white-space: nowrap;
 }
 
 .col {
-  min-Width: auto;
-  max-width: auto; 
+  min-width: auto;
+  max-width: auto;
 }
 
 .col50 {
@@ -48,17 +61,35 @@
   width: 120px;
 }
 
-tr{
+tr {
   border-bottom: 0.5px solid vars.$lightGrey;
 }
 
-td, th{
+td,
+th {
   padding: 1.5rem 0rem;
 }
 
 .theader {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 500;
+  cursor: pointer;
+  &__text {
+    // position: relative;
+    display: inline-block;
+  }
+  &__text:hover {
+    color: vars.$lightBlue;
+  }
+  // &__text:hover:after {
+  //   content:'';
+  //   padding: 1rem;
+  //   left:-0.5rem;
+  //   // background-color: crimson;
+  //   border: 1px solid black;
+
+  //   position: absolute;
+  // }
 }
 
 .alignLeft {
@@ -68,17 +99,22 @@ td, th{
   text-align: center;
 }
 
-.negative, .positive {
+.negative,
+.positive {
   font-weight: 500;
 }
 .negative {
-  color: #E23131;
+  color: #e23131;
 }
 
 .positive {
-  color: #05B94D;
+  color: #05b94d;
 }
 
 .displayNone {
   display: none;
+}
+
+.isNovice {
+  width: 75%;
 }

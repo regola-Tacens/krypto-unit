@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .home {
   padding: 1.5rem;
 }
@@ -24,15 +26,22 @@
     margin-right:1rem;
   }
   &__levelBtn {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
     border:1px solid white;
     color: white;
     padding: 0.5rem;
     margin-right:1rem;
     border-radius: 5px;
+    &--active {
+      background-color: white;
+      color: #004c9e;
+      font-weight: 400;
+    }
   }
   &__levelBtn:hover {
     background-color: white;
-    color: #0469D4;
+    color: #004c9e;
     cursor: pointer;
   }
   &__userIcon {

@@ -8,25 +8,23 @@ const CurrencyItem = ({ currencies, isNovice, isExpert }) => {
     <>
     {
       currencies.map((currency, index) => (
-        <tr key={currency.id}>
-          <td><img className="currenciesTable__star" src={star} alt="star" /></td>
+        <tr className="currenciesTable__tr" key={currency.id}>
+          <td className="currenciesTable__img"><img className="currenciesTable__star" src={star} alt="star" /></td>
           <td className="currenciesTable__index">{index +1}</td>
           <td className="currenciesTable__name">{currency.name}<span className="currenciesTable__symbol">{currency.symbol}</span></td>
-          <td>${toComaNbr(currency.price)}</td>
+          <td className="currenciesTable__price">${toComaNbr(currency.price)}</td>
           { isNovice || isExpert? null :
-            <td className={currency.percent_change_1h < 0 ? "negative" : "positive"}>{currency.percent_change_1h.toFixed(2)}%</td>
+            <td className={currency.percent_change_1h < 0 ? "currenciesTable__percent negative" : "positive currenciesTable__percent"}>{currency.percent_change_1h.toFixed(2)}%</td>
           }
            { isNovice ? null :
-            <td className={currency.percent_change_24h < 0 ? "negative" : "positive"}>{currency.percent_change_24h.toFixed(2)}%</td>
+            <td className={currency.percent_change_24h < 0 ? "currenciesTable__percent negative" : "currenciesTable__percent positive"}>{currency.percent_change_24h.toFixed(2)}%</td>
           }
-          <td className={currency.percent_change_7d < 0 ? "negative" : "positive"}>{currency.percent_change_7d.toFixed(2)}%</td>      
-          {isNovice ? null :
-            <td>${toComaNbr(currency.volume_24h)}</td>
-          }
-          <td>${toComaNbr(currency.circulating_supply)}</td>
-          <td>${toComaNbr(currency.max_supply)}</td>
-          <td>${toComaNbr(currency.market_cap)}</td>
-          <td>{currency.cmc_rank}</td>
+          <td className={currency.percent_change_7d < 0 ? "currenciesTable__percent negative" : "currenciesTable__percent positive"}>{currency.percent_change_7d.toFixed(2)}%</td>      
+          {isNovice || isExpert ? null : <td className="currenciesTable__volume24">${toComaNbr(currency.volume_24h)}</td>}
+          {isNovice || isExpert ? null :<td className="currenciesTable__circulatingSupply">${toComaNbr(currency.circulating_supply)}</td>}
+          {isNovice ? null :<td className="currenciesTable__maxSupply">${toComaNbr(currency.max_supply)}</td>}
+          <td className="currenciesTable__MktCap">${toComaNbr(currency.market_cap)}</td>
+          {isNovice ? null :<td>{currency.cmc_rank}</td>}
         </tr>
       ))
     }

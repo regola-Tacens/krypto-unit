@@ -1,6 +1,6 @@
 const globalMarketCap = (currenciesData) => {
   let globalMktCap = 0;
-  currenciesData.RECORDS.forEach((currency) => {
+  currenciesData.forEach((currency) => {
     globalMktCap += currency.market_cap;
   });
   const nbr = globalMktCap.toString();
