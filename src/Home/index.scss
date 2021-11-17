@@ -113,7 +113,8 @@
     margin:0.5rem;
   }
   &__item span {
-    font-weight: 700;
+    font-weight: 500;
+    color: vars.$lightBlue;
   }
 }
 
@@ -121,7 +122,7 @@
 @media screen and (max-width:450px) {
 .home{
   margin: 0 auto;
-  margin-top:8rem;
+  margin-top:6rem;
   padding:0rem;
 }
 .level{
