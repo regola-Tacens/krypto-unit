@@ -6,11 +6,13 @@ import UserLevel from "./UserLevel";
 import currenciesData from "../data/coinmarket_app_20211115.json";
 import globalMarketCap from "../utils/globalMktCalculator";
 import ScrollUp from "./ScrollUp";
+import PageSelector from "./PageSelector";
+import HeaderInfos from "./HeaderInfos";
 
 function Home() {
   const [isNovice, setIsNovice] = useState(false);
-  const [isExpert, setIsExpert] = useState(false);
-  const [isExperienced, setIsExperienced] = useState(true);
+  const [isExpert, setIsExpert] = useState(true);
+  const [isExperienced, setIsExperienced] = useState(false);
   const [sortedCurrencies, sortCurrencies] = useState(currenciesData.RECORDS);
   const [isSortedByIncreasingPrice, sortByPrice] = useState(false);
   const [isSortedByIncreasingCoin, sortByCoin] = useState(false);
@@ -18,7 +20,8 @@ function Home() {
   const [isSortedByIncreasing24h, sortBy24h] = useState(false);
   const [isSortedByIncreasing7d, sortBy7d] = useState(false);
   const [isSortedByIncreasingVolume, sortByVolume] = useState(false);
-  const [isSortedByCirculatingSupply, sortByCirculatingSupply] = useState(false);
+  const [isSortedByCirculatingSupply, sortByCirculatingSupply] =
+    useState(false);
   const [isSortedByMaxSupply, sortByMaxSupply] = useState(false);
   const [isSortedByMktCap, sortByMktCap] = useState(false);
   const [isSortedByMcmRank, sortByMcmRank] = useState(false);
@@ -173,24 +176,23 @@ function Home() {
     sortByMcmRank((prevState) => !prevState);
   };
   const handleSelectRow = (e) => {
-    window.scrollTo({ top: 0, behavior :'smooth'});
-    setpage(0)
-    setrows(Number(e.target.value))
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setpage(0);
+    setrows(Number(e.target.value));
+  };
   const handleNextPage = () => {
-    window.scrollTo({ top: 0, behavior :'smooth'});
-    (page * rows) + rows < sortedCurrencies.length &&
-    setpage(page + 1)
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    page * rows + rows < sortedCurrencies.length && setpage(page + 1);
+  };
   const handlePreviousPage = () => {
-    window.scrollTo({ top: 0, behavior :'smooth'});
-    page >=1 &&
-    setpage(page - 1)
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    page >= 1 && setpage(page - 1);
+  };
 
   return (
     <div className="home">
       <ScrollUp />
+      <HeaderInfos currenciesData= {currenciesData.RECORDS}/>
       <HomeTitle globalMarketCap={globalMarketCap(sortedCurrencies)} />
       <UserLevel
         onNoviceBtn={handleNoviceEvent}
@@ -217,18 +219,11 @@ function Home() {
         page={page}
         rows={rows}
       />
-      <div className="home__btnContainer">
-      <label className="home__btnContainer__showRows" htmlFor="currencyQuantity">Show rows</label>
-        <div className="select">
-          <select name="currencyQuantity" onChange={handleSelectRow}>
-            <option value="30">30</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-          </select>
-        </div>
-        <button className="home__btnContainer__pageButton" onClick={handlePreviousPage}>-</button>
-        <button className="home__btnContainer__pageButton" onClick={handleNextPage}>+</button>
-      </div>
+      <PageSelector
+        handleSelectRow={handleSelectRow}
+        handlePreviousPage={handlePreviousPage}
+        handleNextPage={handleNextPage}
+      />
     </div>
   );
 }

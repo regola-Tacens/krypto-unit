@@ -14,7 +14,7 @@ const CurrencyItem = ({ currencies, isNovice, isExpert, page, rows }) => {
           </td>
           <td className="currenciesTable__index">{index + 1}</td>
           <td className="currenciesTable__name">
-            {currency.name}
+            {currency.name.substring(0,25)}
             <span className="currenciesTable__symbol">{currency.symbol}</span>
           </td>
           <td className="currenciesTable__price">

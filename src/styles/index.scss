@@ -19,7 +19,7 @@ code {
 
 .App{
   // width:100%;
-  padding: 0rem 2rem 1rem 2rem;
+  padding: 1rem;
 
 }
 
@@ -32,6 +32,11 @@ h1{
 h3{
   font-family: 'Rubik', sans-serif;
   margin: 0 0.7rem;
+}
+h4{
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  margin:0rem;
 }
 
 ::-webkit-scrollbar {

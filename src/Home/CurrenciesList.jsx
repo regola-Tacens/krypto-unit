@@ -23,17 +23,17 @@ const CurrenciesList = ({
     <div className="currenciesTableContainer">
       <table className="currenciesTable">
         <colgroup>
-          <col className="col col85"></col>
+          <col className="col col15"></col>
+          <col className="col col25"></col>
+          <col className="col col100"></col>
           <col className="col col50"></col>
-          <col className="col col250"></col>
-          <col className="col col200"></col>
-          {isNovice || isExpert ? null : <col className="col col85"></col>}
-          {isNovice ? null : <col className="col col85"></col>}
+          {isNovice || isExpert ? null : <col className="col col50"></col>}
+          {isNovice ? null : <col className="col col50"></col>}
           <col className="col col85"></col>
-          {isNovice || isExpert ? null : <col className="col col200"></col>}
-          {isNovice || isExpert ? null : <col className="col col200"></col>}
-          {isNovice ? null : <col className="col col200"></col>}
-          <col className="col col200"></col>
+          {isNovice || isExpert ? null : <col className="col col125"></col>}
+          {isNovice || isExpert ? null : <col className="col col125"></col>}
+          {isNovice ? null : <col className="col col125"></col>}
+          <col className="col col125"></col>
           {isNovice ? null : <col className="col col85"></col>}
         </colgroup>
         <thead>

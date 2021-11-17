@@ -1,76 +1,213 @@
-@use 'src/styles/vars';
+@use "src/styles/vars";
 
-.header{
-  z-index:5;
+.header {
+  z-index: 5;
   position: fixed;
-  top:0px;
+  top: 0px;
   background-color: white;
-  width: calc(100% - 4rem);
+  width: calc(100% - 2rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  border-bottom:1px solid vars.$lightGrey;
-  &__navbar{
+  border-bottom: 1px solid vars.$lightGrey;
+  &__navbar {
     display: flex;
     align-items: center;
-    &__logo{
-      margin-right:4rem;
+    &__logo {
+      margin-right: 2rem;
       display: flex;
       align-items: center;
-      &__img{
-        margin-bottom:0.6rem;
-        width:50px;
-        margin-right:0.5rem;
+      &__img {
+        margin-bottom: 0.6rem;
+        width: 50px;
+        margin-right: 0.5rem;
       }
-      &__text{
-        font-family: 'Rubik', sans-serif;
+      &__text {
+        font-family: "Rubik", sans-serif;
         font-weight: 900;
-        font-size:1.2rem;
+        font-size: 1.2rem;
       }
-      &__text > span{
+      &__text > span {
         color: vars.$orange;
         font-weight: 400;
       }
     }
-    &__buttons{
+    &__buttons {
       display: flex;
+      font-size:0.9rem;
     }
   }
-  &__userSpecs{
+  &__userSpecs {
     display: flex;
     align-items: center;
-    &__language{
-      margin-right:0.5rem;
+    &__language {
+      margin-right: 0.5rem;
     }
-    &__subscribe{
+    &__subscribe {
       background: vars.$blueGradient;
-      padding:0.7rem 1.4rem;
+      font-size: 0.9rem;;
+      padding: 0.5rem 1rem;
       border-radius: 5px;
+      margin-left: 0.5rem;
       color: white;
       cursor: pointer;
     }
-    &__subscribe:hover{
+    &__subscribe:hover {
       background: none;
       background-color: vars.$blue;
     }
   }
 }
 .header__userSpecs .dropdown {
-  margin:0 0.5rem;
+  margin: 0 0.5rem;
+}
+.burger {
+  display: none;
+}
+.menuBtn{
+  position: relative;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  cursor: pointer;
 }
 
-@media screen and (max-width :1000px) {
-  .header{
+.menuBtn:hover:after{
+  position: absolute;
+  content:'';
+  left:0px;
+  bottom:-4px;
+  height:2px;
+  width:0%;
+  background: vars.$blueGradient;
+  animation: line 0.1s linear forwards;
+}
+@keyframes line {
+  from {
+    left:50%;
+    width:0%;
+  }
+  to {
+    left:5%;
+    width:90%;
+  }
+}
+
+
+
+@media screen and (max-width: 1000px) {
+  .header {
     padding: 1rem 0rem;
     flex-wrap: wrap;
-    &__navbar{
-      &__buttons{
+    // width: 90%;
+    &__navbar {
+      &__buttons {
         display: none;
       }
     }
-    &__userSpecs{
+    &__userSpecs {
       display: none;
     }
   }
+
+  /*---------------------------------------------------- */
+  /*---------------------------------------------------- */
+  /* ------------------burger menu----------------------*/
+  /*---------------------------------------------------- */
+
+  .burger {
+    // position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .burger__background{
+    display: none;
+  }
+
+  .burger__btn {
+    // position: relative;
+    z-index: 100;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: black;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in;
+  }
+  .burger__btn::before,
+  .burger__btn::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    left: 0px;
+    border-radius: 5px;
+    background-color: black;
+    transition: transform 0.3s ease-in;
+  }
+
+  .burger__btn::before {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease-in;
+  }
+  .burger__btn::after {
+    transform: translateY(10px);
+    transition: transform 0.3s ease-in;
+  }
+
+  .burger__btn--open::before {
+    transform: rotate(55deg);
+    transition: transform 0.3s ease-in;
+  }
+
+  .burger__btn--open::after {
+    transform: rotate(-55deg);
+    transition: transform 0.3s ease-in;
+  }
+
+  .burger__btn--open {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in;
+  }
+
+  .burger--open {
+    z-index:50;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: - 1rem;
+    top: 0px;
+    width: 100vw;
+    height: 101vh;
+    background-color: vars.$lightBlue;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 5rem;
+    color: white;
+    animation-duration: 0.5s;
+    animation-name: moveUp;
+  }
+
+  .burgerCoins{
+    z-index:201;
+    font-size:1.5rem;
+    color:white;
+  }
+
 }
+
+@keyframes moveUp {
+  from {
+    top:100vh;
+  }
+
+  to {
+    top:0vh;
+  }
+}
+
