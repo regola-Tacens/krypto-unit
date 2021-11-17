@@ -6,7 +6,7 @@
 }
 
 .currenciesTable {
-  font-size:0.9rem;
+  font-size: 0.9rem;
   width: 100%;
   margin: 0 auto;
   &__symbol {
@@ -44,15 +44,11 @@
   }
 }
 
-// .col {
-//   min-width: auto;
-//   max-width: auto;
-// }
-.col15{
+.col15 {
   min-width: 15px;
   max-width: 15px;
 }
-.col25{
+.col25 {
   min-width: 25px;
   max-width: 25px;
 }
@@ -72,15 +68,15 @@
   min-width: 200px;
   max-width: 200px;
 }
-.col150{
+.col150 {
   min-width: 150px;
   max-width: 150px;
 }
-.col125{
+.col125 {
   min-width: 120px;
   max-width: 120px;
 }
-.col100{
+.col100 {
   min-width: 100px;
   max-width: 100px;
 }
@@ -92,9 +88,9 @@
 tr {
   border-bottom: 0.5px solid vars.$lightGrey;
 }
-thead > tr{
+thead > tr {
   border-top: 1px solid vars.$lightGrey;
-  border-bottom:1px solid vars.$darkGrey;
+  border-bottom: 1px solid vars.$darkGrey;
 }
 
 td,
@@ -107,14 +103,13 @@ th {
   font-weight: 500;
   cursor: pointer;
   &__text {
-    // position: relative;
     display: inline-block;
-    padding-right:1rem;
+    padding-right: 1rem;
   }
   &__text:hover {
     color: vars.$lightBlue;
   }
-  &__index{
+  &__index {
     text-align: left;
     padding: 0rem 0.5rem;
   }
@@ -147,8 +142,8 @@ th {
   width: 75%;
 }
 
-@media screen and (max-width:1300px){
-  .currenciesTable{
-    font-size:0.8rem;
+@media screen and (max-width: 1300px) {
+  .currenciesTable {
+    font-size: 0.8rem;
   }
 }

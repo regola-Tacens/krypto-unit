@@ -5,7 +5,7 @@ import "./index.scss";
 import UserLevel from "./UserLevel";
 import currenciesData from "../data/coinmarket_app_20211115.json";
 import globalMarketCap from "../utils/globalMktCalculator";
-import ScrollUp from "./ScrollUp";
+import ScrollUp from "../utils/ScrollUp";
 import PageSelector from "./PageSelector";
 import HeaderInfos from "./HeaderInfos";
 
@@ -202,6 +202,12 @@ function Home() {
         isExpert={isExpert}
         isExperienced={isExperienced}
       />
+      <PageSelector
+        handleSelectRow={handleSelectRow}
+        handlePreviousPage={handlePreviousPage}
+        handleNextPage={handleNextPage}
+        numberOfCurrencies={currenciesData.RECORDS.length}
+      />
       <CurrenciesList
         sortedCurrencies={sortedCurrencies}
         isNovice={isNovice}
@@ -223,6 +229,7 @@ function Home() {
         handleSelectRow={handleSelectRow}
         handlePreviousPage={handlePreviousPage}
         handleNextPage={handleNextPage}
+        numberOfCurrencies={currenciesData.RECORDS.length}
       />
     </div>
   );

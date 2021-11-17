@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 const CurrencyItem = ({ currencies, isNovice, isExpert, page, rows }) => {
   return (
+    // List of currencies on screen, the number of currencies depends on the selected value of 'rows'
     <>
       {currencies.map((currency, index) => {
         

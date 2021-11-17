@@ -1,45 +1,45 @@
-@use 'src/styles/vars';
+@use "src/styles/vars";
 
 .home {
   padding: 1.5rem;
   margin-top: 5rem;
-  &__btnContainer{
+  &__btnContainer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-bottom: 0.5rem;
 
-    &__pageButton{
-      margin: 0.5rem;
+    &__pageButton {
+      margin-left: 0.5rem;
       color: white;
       border-radius: 5px;
       border: none;
-      padding:0.3rem 1.5rem;
+      padding: 0.3rem 1rem;
       background: vars.$blueGradient;
     }
-    &__showRows{
-      font-family: 'Rubik', sans-serif;
+    &__showRows {
+      font-family: "Rubik", sans-serif;
       color: vars.$lightGrey;
-      margin-right:1rem;
+      margin-right: 1rem;
     }
   }
 }
 
 .mainTitle {
-  margin-top:1rem;
+  margin-top: 1rem;
   &__hero {
     margin-bottom: 0.5rem;
   }
   &__baseline {
     font-weight: 400;
-    font-size:1rem;
-    font-family: 'Rubik', sans-serif;
-    // margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-family: "Rubik", sans-serif;
   }
 }
 
 .level {
   position: relative;
-  background: linear-gradient(90deg, #2EC3CC 20.71%, #036AD3 97%);
+  background: linear-gradient(90deg, #2ec3cc 20.71%, #036ad3 97%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -47,16 +47,16 @@
   border-radius: 5px;
   margin: 2rem 0rem;
   &__userIcon {
-    margin-right:1rem;
+    margin-right: 1rem;
   }
   &__levelBtn {
     font-size: 0.9rem;
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik", sans-serif;
     font-weight: 300;
-    border:1px solid white;
+    border: 1px solid white;
     color: white;
     padding: 0.5rem;
-    margin-right:1rem;
+    margin-right: 1rem;
     border-radius: 5px;
     transform: translateY(0px);
     transition: 0.3s transform ease-in-out;
@@ -64,7 +64,7 @@
       background-color: white;
       color: vars.$darkGrey;
       font-weight: 400;
-      box-shadow: 3px 4px 4px -2px rgba(0,0,0,0.2);
+      box-shadow: 3px 4px 4px -2px rgba(0, 0, 0, 0.2);
     }
   }
   &__levelBtn:hover {
@@ -73,44 +73,23 @@
     transition: 0.3s transform ease-in-out;
   }
   &__userIcon {
-    width:2rem;
+    width: 2rem;
   }
-  &__expertise{
+  &__expertise {
     color: white;
     position: absolute;
     top: 0.5rem;
     left: 5.5rem;
-  } 
+  }
 }
 
-.scrollUp{
-  cursor: pointer;
-  right: 1rem;
-  bottom: 1rem;
-  position: fixed;
-  width:50px;
-  border: 1px solid vars.$lightGrey;
-  background-color: white;
-  padding: 0.7rem;
-  border-radius: 50px;
-  box-shadow: 2px 4px 4px -3px rgba(0,0,0,0.3);
-  transform: translateY(0px);
-  transition: 0.3s transform ease-in-out;
-}
-
-.scrollUp:hover{
-  transform: translateY(-6px);
-  transition: 0.3s transform ease-in-out;
-  
-}
-
-.headerInfos{
+.headerInfos {
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  &__item{
-    margin:0.5rem;
+  &__item {
+    margin: 0.5rem;
   }
   &__item span {
     font-weight: 500;
@@ -118,39 +97,37 @@
   }
 }
 
+@media screen and (max-width: 450px) {
+  .home {
+    margin: 0 auto;
+    margin-top: 6rem;
+    padding: 0rem;
+  }
+  .level {
+    width: 100%;
+    padding: 2rem 1rem;
+    &__levelBtn {
+      margin-right: 0.5rem;
+      font-weight: 300;
+    }
+    &__userIcon {
+      margin-right: 0.5rem;
+    }
+    &__expertise {
+      left: 4rem;
+    }
+  }
 
-@media screen and (max-width:450px) {
-.home{
-  margin: 0 auto;
-  margin-top:6rem;
-  padding:0rem;
-}
-.level{
-  width: 100%;
-  padding: 2rem 1rem;
-  &__levelBtn{
-    margin-right:0.5rem;
-    font-weight: 300;
+  .mainTitle {
+    margin-top: 1rem;
+    &__hero {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    &__baseline {
+      font-weight: 400;
+      font-size: 1rem;
+      font-family: "Rubik", sans-serif;
+    }
   }
-  &__userIcon{
-    margin-right:0.5rem;
-  }
-  &__expertise{
-    left: 4rem;
-  }
-}
-
-.mainTitle {
-  margin-top:1rem;
-  &__hero {
-    font-size:1.6rem;
-    margin-bottom: 0.5rem;
-  }
-  &__baseline {
-    font-weight: 400;
-    font-size:1rem;
-    font-family: 'Rubik', sans-serif;
-    // margin-bottom: 0.5rem;
-  }
-}
 }
