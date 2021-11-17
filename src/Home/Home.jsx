@@ -5,6 +5,7 @@ import "./index.scss";
 import UserLevel from "./UserLevel";
 import currenciesData from "../data/coinmarket_app_20211115.json";
 import globalMarketCap from "../utils/globalMktCalculator";
+import ScrollUp from "./ScrollUp";
 
 function Home() {
   const [isNovice, setIsNovice] = useState(false);
@@ -189,6 +190,7 @@ function Home() {
 
   return (
     <div className="home">
+      <ScrollUp />
       <HomeTitle globalMarketCap={globalMarketCap(sortedCurrencies)} />
       <UserLevel
         onNoviceBtn={handleNoviceEvent}

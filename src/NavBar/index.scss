@@ -1,11 +1,16 @@
 @use 'src/styles/vars';
 
 .header{
-  width: 100%;
+  z-index:5;
+  position: fixed;
+  top:0px;
+  background-color: white;
+  width: calc(100% - 4rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  border-bottom:1px solid vars.$lightGrey;
   &__navbar{
     display: flex;
     align-items: center;
@@ -40,7 +45,7 @@
     }
     &__subscribe{
       background: vars.$blueGradient;
-      padding:0.5rem 1rem;
+      padding:0.7rem 1.4rem;
       border-radius: 5px;
       color: white;
       cursor: pointer;
@@ -53,4 +58,19 @@
 }
 .header__userSpecs .dropdown {
   margin:0 0.5rem;
+}
+
+@media screen and (max-width :1000px) {
+  .header{
+    padding: 1rem 0rem;
+    flex-wrap: wrap;
+    &__navbar{
+      &__buttons{
+        display: none;
+      }
+    }
+    &__userSpecs{
+      display: none;
+    }
+  }
 }

@@ -1,6 +1,5 @@
 import Home from './Home/Home';
 import './styles/index.scss';
-// import './styles/reset.scss';
 import NavBar from './NavBar';
 
 function App() {

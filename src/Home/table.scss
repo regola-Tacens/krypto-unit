@@ -41,8 +41,6 @@
   &__maxSupply {
     padding-right: 1rem;
   }
-  // overflow-x: scroll;
-  // white-space: nowrap;
 }
 
 .col {
@@ -69,6 +67,10 @@
 tr {
   border-bottom: 0.5px solid vars.$lightGrey;
 }
+thead > tr{
+  border-top: 1px solid vars.$lightGrey;
+  border-bottom:1px solid vars.$darkGrey;
+}
 
 td,
 th {
@@ -90,15 +92,6 @@ th {
   &__index{
     padding: 0rem 0.5rem;
   }
-  // &__text:hover:after {
-  //   content:'';
-  //   padding: 1rem;
-  //   left:-0.5rem;
-  //   // background-color: crimson;
-  //   border: 1px solid black;
-
-  //   position: absolute;
-  // }
 }
 
 .alignLeft {

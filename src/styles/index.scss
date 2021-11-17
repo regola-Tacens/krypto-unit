@@ -19,17 +19,34 @@ code {
 
 .App{
   // width:100%;
-  padding:1rem 2rem;
+  padding: 0rem 2rem 1rem 2rem;
 
 }
 
 h1{
   font-family: 'Rubik', sans-serif;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h3{
   font-family: 'Rubik', sans-serif;
   margin: 0 0.7rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: vars.$blueGradient;
+  border-radius: 10px;
 }
