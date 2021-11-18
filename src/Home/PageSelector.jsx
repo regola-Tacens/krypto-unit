@@ -2,9 +2,9 @@
 const PageSelector = ({ handleSelectRow, handlePreviousPage, handleNextPage, numberOfCurrencies }) => {
   return (
     <div className="home__btnContainer">
-    <label className="home__btnContainer__showRows" htmlFor="currencyQuantity">Show rows</label>
       <div className="select is-small">
         <select name="currencyQuantity" onChange={handleSelectRow}>
+          <option value="">Show rows</option>
           <option value="30">30</option>
           <option value="50">50</option>
           <option value="100">100</option>

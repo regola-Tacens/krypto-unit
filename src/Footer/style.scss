@@ -1,0 +1,77 @@
+@use "src/styles/vars";
+
+.footer{
+  position: relative;
+  bottom:2px;
+  top:15px;
+  width: 100vw;
+  padding:0;
+}
+.blackFooter{
+  background-color: vars.$veryDarkGrey;
+  padding:4rem 2rem;
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  &__logoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__menuHeader{
+    color: rgb(202, 202, 202);
+    font-weight: 500;
+  }
+  &__infos{
+    padding:0rem 1rem;
+    max-width:30%;
+    line-height: 1.2rem;
+    &__logo{
+      width:40px;
+    }
+    &__logoText{
+      font-family: "Rubik", sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      margin-bottom:0.5rem;
+    }
+    &__logoText > span{
+        color: vars.$orange;
+        font-weight: 400;
+    }
+  }
+  &__AboutMenu, &__Developpers, &__Community, &__Email{
+    word-break: keep-all;
+    padding:0rem 1rem;
+    min-width:11rem;
+    line-height: 1.5rem;
+  }
+  &__Developpers{
+    min-width:10rem;
+  }
+  &__Community{
+    min-width:10rem;
+  }
+  &__Email{
+    max-width:30%;
+    &__text{
+      margin-bottom:1rem;
+    }
+  }
+}
+
+@media screen and (max-width:900px){
+  .blackFooter{
+    flex-direction: column;
+    &__infos{
+      max-width:100%;
+      margin-bottom: 1rem;
+    }
+    &__AboutMenu, &__Developpers, &__Community, &__Email{
+      margin-bottom: 1rem;
+      min-width:100%;
+    }
+  }
+}
